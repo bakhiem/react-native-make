@@ -6,7 +6,7 @@ const { lstatSync } = require('fs');
  * For faster development workflow, when npm linked
  * we want this library to be transpiled at runtime using the ts-node resolver
  */
-const res = lstatSync(resolve('.', 'node_modules', '@haxibiao', 'react-native-make'));
+const res = lstatSync(resolve('.', 'node_modules', '@khiemnb', 'react-native-make'));
 if (res.isSymbolicLink()) {
   console.warn('Detected linked install of react-native-make, compiling at runtime...');
   require('ts-node').register({ project: resolve(__dirname, `tsconfig.json`) });

@@ -6,9 +6,9 @@
 In your react-native project folder, run:
 
 ```bash
-yarn add -D @haxibiao/react-native-make
+yarn add -D @khiemnb/react-native-make
 # OR
-npm i -D @haxibiao/react-native-make
+npm i -D @khiemnb/react-native-make
 ```
 
 **Please note:** This plugin only supports react-native-cli v2+
@@ -30,7 +30,7 @@ You can get the list of available plugins by running `react-native -h` within yo
 - `cd react-native-make`
 - Run `yarn` then `yarn link`
 - Launch a new project with `react-native init`
-- In your React Native project, `yarn link @haxibiao/react-native-make`
+- In your React Native project, `yarn link @khiemnb/react-native-make`
 - In the package.json of your React Native project, in dependencies add "@haxibiao/react-native-make" : "0.0.0"
 
 ## Changes in 3.0.0
