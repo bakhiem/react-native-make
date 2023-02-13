@@ -10,6 +10,7 @@ export const addAndroidIcon = async (iconSource: string, backgroundColor: string
     await checkImageIsSquare(iconSource);
     await generateLegacyIcons(iconSource);
     await generateAdaptiveIcons(iconSource, backgroundColor);
+    await generateNotificationIcons(iconSource);
   } catch (err) {
     console.log(err);
   }
@@ -25,7 +26,16 @@ const generateLegacyIcons = (iconSource: string) =>
       )
     )
   );
-
+  const generateNotificationIcons = (iconSource: string) =>
+  Promise.all(
+    config.androidIconSizes.map(size =>
+      generateResizedAssets(
+        iconSource,
+        `${ANDROID_MAIN_RES_PATH}/drawable-${size.density}/ic_stat_onesignal_default.png`,
+        size.value
+      )
+    )
+  );
 const generateAdaptiveIcons = (iconSource: string, backgroundColor: string) => {
   replaceInFile(
     join(__dirname, `../../../../templates/android/values/colors-icon.xml`),
