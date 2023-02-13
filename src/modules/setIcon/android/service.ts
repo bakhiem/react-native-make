@@ -1,8 +1,8 @@
-import { checkImageIsSquare, generateResizedAssets } from '../../../services/image.processing';
+import { checkImageIsSquare, generateRadiusAssets, generateResizedAssets } from '../../../services/image.processing';
 import { config } from './config';
 import { ANDROID_MAIN_PATH, ANDROID_MAIN_RES_PATH } from '../../config';
 import { join } from 'path';
-import { copyFile, replaceInFile } from '../../../services/file.processing';
+import { replaceInFile } from '../../../services/file.processing';
 import { getHexColor } from '../../../services/color.processing';
 
 export const addAndroidIcon = async (iconSource: string, backgroundColor: string) => {
@@ -71,7 +71,7 @@ const generateAdaptiveIcon = (iconSource: string, density: string, value: number
   //   join(__dirname, `../../../../templates/android/mipmap/ic_launcher.xml`),
   //   `${destinationDirectoryPath}/ic_launcher.xml`
   // );
-  return generateResizedAssets(
+  return generateRadiusAssets(
     iconSource,
     `${destinationDirectoryPath}/ic_launcher_round.png`,
     value
